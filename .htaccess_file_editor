@@ -1,0 +1,10 @@
+# invoke rewrite engine
+RewriteEngine On
+RewriteBase /scraping/files/demo/ecuadoriansinchina.com_danny_ecuachina.com_0wdtrzgxw8d
+#Redirect 400,401,403,404,500 to main website
+ErrorDocument 400 http://ecuadoriansinchina.com
+ErrorDocument 401 http://ecuadoriansinchina.com
+ErrorDocument 403 http://ecuadoriansinchina.com
+ErrorDocument 404 http://ecuadoriansinchina.com
+ErrorDocument 500 http://ecuadoriansinchina.com
+RewriteRule ^index.html$ /scraping/files/demo/ecuadoriansinchina.com_danny_ecuachina.com_0wdtrzgxw8d/ [L,R=301]

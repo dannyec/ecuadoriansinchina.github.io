@@ -1,0 +1,14 @@
+# invoke rewrite engine
+RewriteEngine On
+RewriteBase /
+# Redirect to www
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+#Redirect 400,401,403,404,500 to main website
+ErrorDocument 400 http://ecuadoriansinchina.com
+ErrorDocument 401 http://ecuadoriansinchina.com
+ErrorDocument 403 http://ecuadoriansinchina.com
+ErrorDocument 404 http://ecuadoriansinchina.com
+ErrorDocument 500 http://ecuadoriansinchina.com
+RewriteRule ^index.html$ / [L,R=301]
